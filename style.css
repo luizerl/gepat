@@ -102,7 +102,7 @@ a{
 #presentation::before{
     content: '';
     display: block;
-    background: url(https://www.noticias.unb.br/images/Noticias/2017/04-Abr/Inaugurao-da-UnB_G-0010-03-Cedoc.JPG);
+    background: url(./img/at.jpg);
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
@@ -141,7 +141,7 @@ a{
 #presentation .image{
     display: block;
     margin: 30px;
-    background: url(https://www.noticias.unb.br/images/Noticias/2017/04-Abr/Inaugurao-da-UnB_G-0010-03-Cedoc.JPG);
+    background: url(./img/at.jpg);
     background-repeat: no-repeat;
     background-size: 1000px;
     width: 450px;
@@ -355,7 +355,7 @@ a{
 }
 
 #contact .image{
-    background: url(https://contee.org.br/wp-content/uploads/2020/01/9E939FE3-5509-412A-9638-93A846334FA6.jpeg);
+    background: url(./img/images.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 40px 30px 0px var(--green);
