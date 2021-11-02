@@ -1,0 +1,464 @@
+/* Global */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    font-family: 'Roboto', sans-serif;
+    --dark-color: #333333;
+    --darker: #212121;
+    --blue: #132B59;
+    --green: #165E0B;
+    --light-grey: #CECECE;
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    margin: auto 10%;
+}
+
+/* Hero Section */
+#hero{
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+}
+
+#hero header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#hero .menu ul{
+    display: flex;
+}
+
+#hero nav li{
+    margin: 5px;
+}
+
+#hero a{
+    color: var(--dark-color);
+    text-transform: uppercase;
+}
+
+#hero .current-page{
+    color: var(--blue);
+    font-weight: 700;
+}
+
+#hero{
+    background: url(./img/hero.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#hero li a:hover{
+    color: var(--blue);
+    text-decoration: underline;
+}
+#hero li:last-child{
+    position: relative;
+    font-weight: bold;
+    font-size: 18px;
+}
+#hero li:last-child::after{
+    content: '';
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-color: var(--light-grey);
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: -05px;
+
+}
+
+/* APRESENTAÇÃO */
+#presentation{
+    width: 100%;
+    /* height: 50vh; */
+    position: relative;
+    z-index: 0;
+    
+}
+#presentation::before{
+    content: '';
+    display: block;
+    background: url(https://www.noticias.unb.br/images/Noticias/2017/04-Abr/Inaugurao-da-UnB_G-0010-03-Cedoc.JPG);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .2;
+    z-index: 1;
+}
+#presentation::after{
+    content: '';
+    background-color: #141414;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+#presentation  > *{
+    filter: blur(0px) !important;
+    position: relative;
+    z-index: 2;
+}
+#presentation > .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+#presentation .image{
+    display: block;
+    margin: 30px;
+    background: url(https://www.noticias.unb.br/images/Noticias/2017/04-Abr/Inaugurao-da-UnB_G-0010-03-Cedoc.JPG);
+    background-repeat: no-repeat;
+    background-size: 1000px;
+    width: 450px;
+    height: 460px;
+    position: relative;
+}
+
+#presentation .image:after{
+    content: ' Foto: Cedoc/Arquivo Central UnB.' ;
+    color: white;
+    position: absolute;
+    bottom: -20px;
+}
+
+#presentation .info{
+    color: white;
+    width: 50%;
+    text-align: center;
+}
+
+#presentation .info h1{
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+#presentation p{
+    text-align: justify;
+}
+
+/* PARCERIAS */
+#partnerships{
+    padding: 20px 0;
+    background-color: var(--light-grey);
+    overflow: hidden;
+    z-index: -1;
+    position: relative;
+}
+
+
+
+#partnerships::after{
+    content: 'PARCERIAS';
+    font-size: 300px;
+    color: rgba(171, 171, 171, .5);
+    font-weight: bold;
+    position: absolute;
+    bottom: -75px;
+    left: -20px;
+    z-index: 0;
+
+}
+#partnerships * {
+    z-index: 2;
+}
+#partnerships .logo{
+    display: flex;
+    align-items: center;
+}
+#partnerships .logo svg{
+    height: 50px
+}
+
+#partnerships h1{
+    display: inline-block;
+    line-height: 40px;
+}
+
+.partners{
+    width: 100%;
+    display: flex;
+    margin: 30px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.partners img{
+    width: 60%;
+    margin: 0 30px;
+}
+
+/* SEÇÕES */
+
+#sections {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.section-wraper{
+    display: flex;
+}
+
+.section-wraper  div{
+    display: block;
+    height: 500px;
+    width: 350px;
+    box-shadow: 2px 10px 20px rgba(0, 0, 0, .6);
+}
+
+.section-wraper .education{
+    background-color: slateblue;
+    transition: transform .5s ease-in-out;
+    left: 0;
+    z-index: 4;
+}
+.section-wraper .articles{
+    background-color: yellow;
+    transition:  transform .5s ease-in-out;
+    left: 250px;
+    z-index: 3;
+}
+.section-wraper .research{
+    background-color: rebeccapurple;
+    transition:  transform .5s ease-in-out;
+    left: 450px;
+    z-index: 2;
+}
+.section-wraper .news{
+    background-color: seagreen;
+    transition:  transform .5s ease-in-out;
+    left: 650px;
+    z-index: 1;
+}
+
+
+/* ANIMAÇÃO */
+
+.section-wraper .education:hover{
+    transform: scale(1.1);
+}
+
+.section-wraper .articles:hover{
+    transform: scale(1.1);
+    z-index: 5;
+
+}
+.section-wraper .research:hover {
+    transform: scale(1.1);
+    z-index: 5;
+}
+
+.section-wraper .news:hover{
+    transform: scale(1.1);
+    z-index: 5;
+}
+
+/* POSTAGENS */
+
+#post-blog{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--blue);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.post{
+    width: 80%;
+    padding: 30px;
+    height: 500px;
+    background-color: var(--light-grey);
+}
+
+.post-type .slug-post{
+    position: relative;
+}
+
+.post-type .slug-post::before{
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #E04343;
+    position: absolute;
+    left: -15px;
+    top: 5px;
+}
+
+.menu-slider{
+    margin: 20px;
+}
+.menu-slider span{
+    display: inline-block;
+    margin-left: 20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform .3s ease-in-out;
+    cursor: pointer;
+}
+
+.menu-slider span:hover{
+    transform: scale(2);
+}
+
+/* CONTATO */
+#contact{
+    padding: 50px;
+}
+#contact > .container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#contact .image{
+    background: url(https://contee.org.br/wp-content/uploads/2020/01/9E939FE3-5509-412A-9638-93A846334FA6.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 40px 30px 0px var(--green);
+    height: 670px;
+    width: 490px;
+}
+
+.contact-form p{
+    margin: 10px 0;
+    font-size: 24px;
+    color: var(--darker);
+}
+
+form input, form textarea ,form button{
+    font-family: 'Roboto', sans-serif;
+    display:block;
+    margin: 20px 0;
+    width: 500px;
+    border: 2px solid var(--green);
+    border-radius: 30px;
+    padding:15px;
+}
+
+form textarea::-webkit-scrollbar{
+    resize: none;
+}
+
+form input[type="email"]{
+    height: 45px;
+    font-size: 20px;
+}
+form textarea{
+    height: 200px;
+    font-size: 20px;
+    resize: none;
+}
+
+form button{
+    width: 140px;
+    height: 50px;
+    font-size: 20px;
+    padding: 15px;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    background-color: var(--blue);
+    cursor: pointer;
+}
+
+form input:focus, form textarea:focus{
+    outline: none;
+}
+
+/* FOOTER */
+
+footer{
+    color: white;
+    padding: 50px 0;
+    background-color: #171717;
+    position: relative;
+    text-align: center;
+}
+footer ul li a, footer a{
+    color: white;
+    position: relative;
+}
+
+
+footer ul li a:hover::before{
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--blue);
+    position: absolute;
+    top: 5px;
+    left: -15px;
+}
+
+footer  .menu-footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+footer .logo{
+    text-align: center;
+    width: 300px;
+}
+
+footer .developer {
+    color: var(--dark-color);
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 12px;
+}
+footer .developer a{
+    display: inline-block;
+    color: var(--dark-color);
+    position: relative;
+}
+
+.developer a:hover{
+    color: white;
+}
