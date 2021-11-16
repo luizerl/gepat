@@ -1,0 +1,172 @@
+.main-posts{
+    width: 100%;
+    height: 75vh;
+    background-color: yellow;
+    margin-bottom: 15%;
+    padding: 15px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+}
+
+.main-posts .container::before{
+    content: 'ARTIGOS';
+    display: inline;
+    padding: 5px;
+    color: var(--darker);
+    background-color: white;
+    position: absolute;
+    z-index: 3;
+}
+.main-posts::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(var(--darker), transparent, var(--darker));
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main-posts > .container{
+    height: 100%;
+    position: relative;
+}
+.main-posts .post-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    /* gap: 10px; */
+
+    position: absolute;
+    right: 0;
+    bottom: -30%;
+}
+
+.main-posts .post-container .post-wrap{
+    display: flex;
+    text-align: left;
+    align-items: flex-end;
+    padding: 20px;
+    width: 300px;
+    height: 290px;
+    border-radius: 30px;
+    overflow: hidden;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+
+.main-posts .post-wrap::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 290px;
+    background-image: linear-gradient( transparent, var(--darker) );
+    z-index: -1;
+}
+
+.main-posts .post-wrap .post-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main-posts .post-img img{
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.main-posts .post-wrap:hover h1{
+    margin-bottom: 10px ;
+    transition: margin-bottom .3s ease-in-out;
+}
+
+.main-posts h1 a{
+    color: white;
+}
+
+
+/* POST SECTION */
+.post-section{
+    margin: 30px 0;
+}
+
+.post-section .container{
+    position: relative;
+    overflow: hidden;
+}
+
+.post-section .post-wrap{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.post-section .post-wrap .post-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.post-section .post-img img{
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.post-section .post-wrap a{
+    text-transform: none;
+    color: var(--blue);
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.post-section .post-wrap a:hover{
+    color: var(--light-blue);
+}
+
+.post-section .post-wrap .post-excerpt{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.3;
+    margin: 10px 0;
+}
+
+
+.post-section .post-title::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: var(--blue);
+    position: absolute;
+    bottom: 0;
+    left: -50%;
+    transition: left 1s ease-in-out;
+}
+
+.post-section .post-wrap:hover .post-title::after{
+    left: 0;
+}

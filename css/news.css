@@ -1,0 +1,139 @@
+/* Global */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-family: 'Roboto', sans-serif;
+    --dark-color: #333333;
+    --darker: #212121;
+    --dark-grey: #131313;
+    --blue: #132B59;
+    --blue-light: #1b3d7c;
+    --green: #165E0B;
+    --light-grey: #CECECE;
+}
+
+
+/* MAIN POST */
+#main-post{
+    margin-top: 10px;
+    color: white;
+}
+
+#main-post img{
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+}
+
+#main-post > .container{
+    height: 85vh;
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+}
+
+#main-post .info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: 40%;
+    height: 100%;
+    background-color: var(--dark-grey) ;
+    z-index: 10;
+}
+
+#main-post .info-container > *:not(button){
+    width: 80%;
+}
+
+#main-post .tag{
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+}
+
+#main-post .post-title{
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+#main-post .post-description{
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+#main-post .info-container > button{
+    background-color: var(--blue);
+    padding: 8px 25px;
+    border: none;
+    border-radius: 5px;
+    align-self: flex-start;
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+#main-post .info-container  button:hover {
+    background-color: var(--blue-light);
+}
+
+/* POST */
+#posts{
+    margin: 50px 0;
+}
+#posts > .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1%;
+}
+
+#posts .container-post{
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    width: 30%;
+    margin-top: 50px ;
+}
+
+.container-post .img-post-container{
+    height: 300px;
+    background-color: var(--light-grey);
+
+}
+
+#posts .img-post-container{
+    overflow: hidden;
+    background-color: var(--light-grey);
+}
+
+#posts .img-post-container img{
+    width: 100%;
+    transition: width .1s ease-in ;
+}
+#posts .img-post-container:hover img{
+    cursor: pointer;
+    width: 120%;
+}
+
+#posts h3{
+    margin-top: 10px;
+}
