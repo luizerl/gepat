@@ -1,0 +1,90 @@
+html body > .non-homepage{
+    background-color:  transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    color: white;
+}
+
+.post-header{
+    width: 100%;
+    height: 90vh;
+    background-color: tomato;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+}
+
+.post-header  > .container{
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px 0;
+}
+
+.post-header::before{
+    content: '';
+    display: block;
+    width: inherit;
+    height: inherit;
+    background-image: linear-gradient(black, transparent, black);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+}
+
+
+.post-header .post-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    z-index: -2;
+}
+
+
+.post-header .post-img img{
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.post-header h1{
+    color: white;
+    font-family: 'Playfair Display', serif;
+    max-width: 80%;
+    font-size: 36px;
+    text-align: left;
+    text-shadow: 3px 5px 10px black;
+}
+
+.post-info ul{
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    width: inherit;
+    height: inherit;
+    margin: 30px 0;
+}
+
+.post-info li{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.post-content{
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    margin: 30px 0;
+}
