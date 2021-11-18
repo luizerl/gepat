@@ -79,16 +79,75 @@
     </section>
 
     <section id="post-blog">
-        <div class="post">
-            <div class="post-type">
-                <p class="slug-post">Notícias</p>
+        <div class="input-container">
+            <input type="radio" name="slide" id="slide-1" checked>
+            <input type="radio" name="slide" id="slide-2">
+            <input type="radio" name="slide" id="slide-3">
+    
+            <div class="post-container">
+                <label for="slide-1">
+                    <div class="post" data-slug="Notícias">
+                        <div class="post-img">
+                            <img src="https://source.unsplash.com/random">
+                        </div>
+                        
+                        <div class="post-info">
+                            <h1 class="post-title">
+                                <a href="">
+                                    Lorexm ipsum, dolor sit amet consectetur adipisicing elit. Natus, fugiat.</h1>
+                                </a>
+                            <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus dolorum ullam non iste, saepe assumenda ducimus. Dolore magni earum autem.</p>
+                        </div>
+                    </div>
+                </label>
+        
+                <label for="slide-2">
+                    <div class="post" data-slug="Artigos">
+                        <div class="post-img">
+                            <img src="https://source.unsplash.com/random">
+                        </div>
+
+                        <div class="post-info">
+                            <h1 class="post-title">
+                                <a href="">
+                                    Lorexm ipsum, dolor sit amet consectetur adipisicing elit. Natus, fugiat.</h1>
+                                </a>
+                            <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus dolorum ullam non iste, saepe assumenda ducimus. Dolore magni earum autem.</p>
+                        </div>
+                    </div>
+                </label>
+                
+                <label for="slide-3">
+                    <div class="post" data-slug="Publicações">
+                        <div class="post-img">
+                            <img src="https://source.unsplash.com/random">
+                        </div>
+                     
+                        <div class="post-info">
+                            <h1 class="post-title">
+                                <a href="">
+                                    Lorexm ipsum, dolor sit amet consectetur adipisicing elit. Natus, fugiat.</h1>
+                                </a>
+                            <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus dolorum ullam non iste, saepe assumenda ducimus. Dolore magni earum autem.</p>
+                        </div>
+                    </div>
+                </label>
             </div>
+
+            <label for="slide-1">
+                <span></span>
+            </label>
+
+            <label for="slide-2">
+                <span></span>
+            </label>
+
+            <label for="slide-3">
+                <span></span>
+            </label>
         </div>
-        <div class="menu-slider">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        
+        
     </section>
 
     <section id="contact">
@@ -150,4 +209,20 @@
     </footer>
 
 </body>
+
+<script>
+    const inputSlide = document.querySelectorAll('input[type="radio"]');
+    let contadorSlide = 0;
+
+    setInterval(()=>{ 
+        const arr = [...inputSlide];
+        arr[contadorSlide].checked = false;
+
+        contadorSlide++;        
+        contadorSlide = contadorSlide < arr.length ? contadorSlide : 0;
+        
+        arr[contadorSlide].checked = true;
+
+    }, 3000);
+</script>
 </html>
