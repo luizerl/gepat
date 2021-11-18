@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <title>GEPAT</title>
 </head>
 <body>
@@ -43,9 +44,14 @@
                             <li><a href="./publications.html">Publicações</a></li>
                             <li><a href="./indicated-material.html">Materiais Indicados</a></li>
                             <li><a href="">Eventos</a></li>
+    
+                            <div class="bg bg-1"><img src="./img/noticias.jpg"></div>
+                            <div class="bg bg-2"><img src="./img/pesquisa.jpg"></div>
+                            <div class="bg bg-3"><img src="./img/publicacoes.jpg"></div>
+                            <div class="bg bg-4"><img src="https://source.unsplash.com/random"></div>
+                            <div class="bg bg-5"><img src="./img/evento.jpg"></div>                       
+                            
                         </ul>
-                        
-                        
                     </div>
                 </div>
             </nav>
@@ -228,6 +234,8 @@
 </body>
 
 <script>
+    const horizontalMenu = [...document.querySelectorAll('.horizontal-menu li a')];
+    const menuOpen = document.querySelector('input[type="checkbox"]');
     const inputSlide = document.querySelectorAll('input[type="radio"]');
     let contadorSlide = 0;
 
@@ -241,5 +249,29 @@
         arr[contadorSlide].checked = true;
 
     }, 3000);
+
+    menuOpen.addEventListener('click', checkedMenu);
+    
+    horizontalMenu.forEach( i => {
+        i.addEventListener('click', () => {
+            menuOpen.checked = false;
+            document.querySelector('body').style.overflow = 'visible';
+        });
+    });
+    
+    
+    function checkedMenu (){
+        document.querySelector('body').style.overflow = 'visible';
+        
+        if (menuOpen.checked){
+            document.querySelector('body').style.overflow = 'hidden';
+            tl = gsap.timeline({duration: .5})
+            .from('.vertical-menu li', {y:-20, opacity: 0, stagger: .25})
+            .from('.horizontal-menu li', {x:-40, opacity: 0, stagger:.25});
+        }
+        
+    }
+
+    
 </script>
 </html>

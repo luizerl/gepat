@@ -70,6 +70,13 @@ header > .container{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+}
+
+
+header .logo{
+    position: relative;
+    z-index: 30;
 }
 
 nav input{
@@ -107,7 +114,7 @@ nav .menu-window{
     padding: 30px;
     width: 100%;
     height: 100vh;
-    background-color: var(--darker);
+    background-color: #0e0e0e;
     position: fixed;
     top: 0;
     left: 0;
@@ -143,15 +150,21 @@ nav input:checked ~ .menu-label::before{
     z-index: 20;
 }
 
+
+
 nav .menu-window .horizontal-menu{
     position: absolute;
-    top: 30px;
+    bottom: 30px;
+    left: 0;
+    padding: 30px 0 0 12% ;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     font-weight: lighter;
     display: flex;
-    font-size: 26px;
-    width: 60%;
+    font-size: 22px;
+    letter-spacing: 2px;
+    width: 100%;
+    border-top: 1px solid white ;
 }
 
 nav .menu-window .horizontal-menu li{
@@ -160,18 +173,18 @@ nav .menu-window .horizontal-menu li{
 
 nav .menu-window .horizontal-menu .current-page,
 nav .menu-window .horizontal-menu li:hover{
-    font-weight: 400;
+    text-decoration: underline;
 }
 
 nav .menu-window .vertical-menu{
     display: flex;
     flex-direction: column;
     font-family: 'Playfair Display', serif;
-    font-size: 42px;
+    font-size: 48px;
     font-weight: bold;
-    width: 30%;
-    border-right: .8px solid var(--light-grey);
+    width: 40%;
 }
+
 
 
 nav .menu-window ul li a{
@@ -180,12 +193,60 @@ nav .menu-window ul li a{
 }
 
 
-nav .menu-window .vertical-menu li:hover{
+nav .menu-window .vertical-menu li:hover a{
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: .2px white;
     font-style: italic;
 }
 
+nav .bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+nav .bg::after{
+    content: '';
+    display: block;
+    width: inherit;
+    height: inherit;
+    background-image: linear-gradient(#0e0e0e 5% , transparent 80% , #0e0e0e  );
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+nav .bg img{
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+    opacity: 1;
+}
+
+nav .vertical-menu li:nth-of-type(1):hover ~ .bg-1,
+nav .vertical-menu li:nth-of-type(2):hover ~ .bg-2,
+nav .vertical-menu li:nth-of-type(3):hover ~ .bg-3,
+nav .vertical-menu li:nth-of-type(4):hover ~ .bg-4,
+nav .vertical-menu li:nth-of-type(5):hover ~ .bg-5{
+    display: block;
+}
+
+nav .vertical-menu li:hover ~ .bg img{
+    opacity: .5;
+
+}
 
 /* APRESENTAÇÃO */
 #presentation{
