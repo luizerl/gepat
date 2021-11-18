@@ -210,6 +210,7 @@ nav .bg{
     top: 0;
     left: 0;
     z-index: -1;
+
 }
 
 nav .bg::after{
@@ -227,13 +228,8 @@ nav .bg::after{
 nav .bg img{
     min-width: 100%;
     min-height: 100%;
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -ms-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
-    opacity: 1;
 }
+
 
 nav .vertical-menu li:nth-of-type(1):hover ~ .bg-1,
 nav .vertical-menu li:nth-of-type(2):hover ~ .bg-2,
@@ -241,11 +237,17 @@ nav .vertical-menu li:nth-of-type(3):hover ~ .bg-3,
 nav .vertical-menu li:nth-of-type(4):hover ~ .bg-4,
 nav .vertical-menu li:nth-of-type(5):hover ~ .bg-5{
     display: block;
+    animation: opacityImage 1s ease-in-out;
+    opacity: .5;
 }
 
-nav .vertical-menu li:hover ~ .bg img{
-    opacity: .5;
-
+@keyframes opacityImage{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: .5;
+    }
 }
 
 /* APRESENTAÇÃO */
