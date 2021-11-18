@@ -104,10 +104,7 @@ nav .menu-label:hover span:last-of-type{
 
 nav .menu-window{
     display: none;
-}
-
-nav input:checked ~ .menu-window{
-    display: block;
+    padding: 30px;
     width: 100%;
     height: 100vh;
     background-color: var(--darker);
@@ -117,6 +114,19 @@ nav input:checked ~ .menu-window{
     z-index: 2;
 }
 
+nav .menu-window > .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: inherit;
+    height: 100%;
+    
+}
+nav input:checked ~ .menu-window{
+    display: block;
+    
+}
+
 nav input:checked ~ .menu-label > span{
     display: none;
 }
@@ -124,7 +134,7 @@ nav input:checked ~ .menu-label > span{
 nav input:checked ~ .menu-label::before{
     content: '.fechar';
     display: block;
-    font-family: 'Playful Display';
+    font-family: 'Playfair Display';
     font-size: 24px;
     font-weight: bold;
     position: absolute;
@@ -133,7 +143,48 @@ nav input:checked ~ .menu-label::before{
     z-index: 20;
 }
 
+nav .menu-window .horizontal-menu{
+    position: absolute;
+    top: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: lighter;
+    display: flex;
+    font-size: 26px;
+    width: 60%;
+}
 
+nav .menu-window .horizontal-menu li{
+    margin-right: 20px;
+}
+
+nav .menu-window .horizontal-menu .current-page,
+nav .menu-window .horizontal-menu li:hover{
+    font-weight: 400;
+}
+
+nav .menu-window .vertical-menu{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: bold;
+    width: 30%;
+    border-right: .8px solid var(--light-grey);
+}
+
+
+nav .menu-window ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+
+nav .menu-window .vertical-menu li:hover{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: .2px white;
+    font-style: italic;
+}
 
 
 /* APRESENTAÇÃO */
@@ -351,7 +402,7 @@ nav input:checked ~ .menu-label::before{
 }
 
 
-.input-container .post-container .post{
+#post-blog .input-container .post-container .post{
     width: 100%;
     height: 500px;
     padding: 30px;
@@ -363,22 +414,23 @@ nav input:checked ~ .menu-label::before{
     justify-content: flex-end;
 }
 
-.post-info{
+#post-blog .post-info{
     text-align: left;
     color: white;
     text-shadow: 1px 2px 2px black;
 }
-.post-info .post-title{
+
+#post-blog .post-info .post-title{
     margin-bottom: 20px;
 }
-.post-info .post-title a{
+
+#post-blog .post-info .post-title a{
     color: white;
     font-size: 26px;
     text-transform: uppercase;
 }
 
-
-.post::before{
+#post-blog .post::before{
     content: '';
     display: block;
     width: 100%;
@@ -390,7 +442,7 @@ nav input:checked ~ .menu-label::before{
     z-index: -1;
 }
 
-.post::after{
+#post-blog .post::after{
     content: attr(data-slug);
     display: block;
     position: absolute;
@@ -405,7 +457,7 @@ nav input:checked ~ .menu-label::before{
 }
 
 
-.post-img{
+#post-blog .post-img{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -418,7 +470,7 @@ nav input:checked ~ .menu-label::before{
     overflow: hidden;
 }
 
-.post-img img{
+#post-blog .post-img img{
     min-width: 100%;
     min-height: 100%;
 }
@@ -605,6 +657,7 @@ footer  .menu-footer{
 }
 
 footer .logo{
+    
     text-align: center;
     width: 300px;
     align-self: flex-start;
