@@ -1,10 +1,13 @@
 gsap.registerPlugin(ScrollTrigger);
 
+// Declarations
 const horizontalMenu = [...document.querySelectorAll('.horizontal-menu li a')];
 const menuOpen = document.querySelector('input[type="checkbox"]');
 const inputSlide = document.querySelectorAll('input[type="radio"]');
 let counterSlide = 0;
 
+
+// Post's slide
 setInterval(()=>{ 
     const arr = [...inputSlide];
     arr[counterSlide].checked = false;
@@ -24,33 +27,37 @@ horizontalMenu.forEach( i => {
         document.querySelector('body').style.overflow = 'visible';
     });
 });
+
+
+// Animations
 window.addEventListener('load', () =>{
-    tl = gsap.timeline({ 
-        duration: .3, 
+
+    const headerTimeline = gsap.timeline({ 
+        duration: .8,
+        stagger: .4, 
     });
 
-    tl.from('header', {y: -200})
-    .from('#hero', {backgroundSize: 0} )
-    .from('.quote', {opacity: 0, bottom: 0})
+    headerTimeline.from('header', {y: -200})
+    .from('#hero', {
+        opacity: 0
+    })
+    .from('#hero .quote', {
+        stagger: .3,
+        opacity: 0, 
+        bottom: 0
+    });
     
-    tl2 = gsap.timeline({ 
-        duration: .4, 
-        stagger: .25,
+    const presentationTimeline = gsap.timeline({ 
         scrollTrigger:{
-            trigger: '.presentation-image',
+            trigger: '#presentation',
             toggleActions: 'play restart  reset',
-        },
-        scrollTrigger:{
-            trigger: '#presentation .info h1',
-            toggleActions: 'play restart  reset',
-        },
-        scrollTrigger:{
-            trigger: '#presentation .info p',
-            toggleActions: 'play restart  reset',
+            pin: true,
+            scrub: 1,
+            pinSpacing: 0
         },
     });
 
-    tl2.from('.presentation-image', {
+    presentationTimeline.from('.presentation-image', {
         y: -100, 
         opacity: 0,
     })
@@ -61,10 +68,34 @@ window.addEventListener('load', () =>{
     .from('#presentation .info p', {
         opacity: 0,
         x: 50
+    });
+
+    const partnerTimeline = gsap.timeline({ 
+        duration: .5, 
+        stagger: .25,
+        scrollTrigger:{
+            trigger: '#partnerships',
+            toggleActions: 'play restart  reset',
+        },
+    });
+
+    partnerTimeline.from('.partners-info h1',{
+        y: 80,
+        opacity: .2
     })
+    .from('.partners-info p',{
+        x: 200
+    })
+    .from('.partner',{
+        stagger: .3,
+        y: 300,
+        opacity: 0
+    });
+
+    
 })
 
-
+// Functions
 function checkedMenu (){
     document.querySelector('body').style.overflow = 'visible';
     
