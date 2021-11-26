@@ -379,6 +379,7 @@ nav .vertical-menu li:nth-of-type(5):hover ~ .bg-5{
     font-size: 50px;
     font-weight: 500;
     color: var(--gold);
+    line-height: 1;
     width: 38%;
     
 }
