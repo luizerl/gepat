@@ -89,22 +89,30 @@ nav .menu-label{
     cursor: pointer;
 }
 
-nav .menu-label span{
+nav .menu-label span:first-of-type{
     display: block;
-    width: 40px;
+    width: 30px;
     height: 5px;
     background-color: white;
     position: absolute;
     top: 30px;
+    right: 10px;
     z-index: 20;
-}
-
-nav .menu-label span:last-of-type{
-    width: 20px;
-    top: 40px;
     transition: width .2s  ease-in;
 }
 
+nav .menu-label span:last-of-type{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    z-index: 20;
+    transition: width .2s  ease-in;
+}
+
+nav .menu-label:hover span:first-of-type,
 nav .menu-label:hover span:last-of-type{
     width: 40px;
 }
@@ -119,6 +127,30 @@ nav .menu-window{
     top: 0;
     left: 0;
     z-index: 2;
+}
+
+nav .menu-window::after,
+nav .menu-window::before{
+    content: '';
+    display: block;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    
+}
+nav .menu-window::after{
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+    background-image: linear-gradient(45deg,var(--green) , transparent 80%);
+}
+nav .menu-window::before{
+    top: 0;
+    right: 0;
+    transform: translate(50%, -10%);
+    background-image: linear-gradient(270deg,var(--blue) , transparent 80%);
 }
 
 nav .menu-window > .container{
@@ -169,6 +201,12 @@ nav .menu-window .horizontal-menu{
 
 nav .menu-window .horizontal-menu li{
     margin-right: 20px;
+}
+nav .menu-window .horizontal-menu li:last-of-type a{
+    background-color: var(--gold);
+    padding: 0 5px;
+    font-weight: 300;
+    color: var(--darker);
 }
 
 nav .menu-window .horizontal-menu .current-page,
@@ -331,8 +369,28 @@ nav .vertical-menu li:nth-of-type(5):hover ~ .bg-5{
     text-align: justify;
 }
 
+#presentation .buttons{
+    text-align: center;
+}
+
+#presentation .buttons .btn{
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--blue);
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+#presentation .btn:hover{
+    background-color: var(--light-blue);
+}
 /* PARCERIAS */
 #partnerships{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px 0;
     background-color: var(--light-grey);
     overflow: hidden;
@@ -344,11 +402,11 @@ nav .vertical-menu li:nth-of-type(5):hover ~ .bg-5{
 
 #partnerships::after{
     content: 'PARCERIAS';
-    font-size: 300px;
+    font-size: 500px;
     color: rgba(171, 171, 171, .5);
     font-weight: bold;
     position: absolute;
-    bottom: -75px;
+    bottom: -125px;
     left: -20px;
     z-index: 0;
 
@@ -359,6 +417,7 @@ nav .vertical-menu li:nth-of-type(5):hover ~ .bg-5{
 #partnerships .logo{
     display: flex;
     align-items: center;
+    margin: 30px;
 }
 #partnerships .logo svg{
     height: 50px
@@ -372,83 +431,19 @@ nav .vertical-menu li:nth-of-type(5):hover ~ .bg-5{
 .partners{
     width: 100%;
     display: flex;
+    flex-direction: row;
     margin: 30px;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.partners img{
+.partners .partner-1,
+.partners .partner-2,
+.partners .partner-3{
     width: 60%;
     margin: 0 30px;
 }
 
-/* SEÇÕES */
-
-#sections {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.section-wraper{
-    display: flex;
-}
-
-.section-wraper  div{
-    display: block;
-    height: 500px;
-    width: 350px;
-    box-shadow: 2px 10px 20px rgba(0, 0, 0, .6);
-}
-
-.section-wraper .education{
-    background-color: slateblue;
-    transition: transform .5s ease-in-out;
-    left: 0;
-    z-index: 4;
-}
-.section-wraper .articles{
-    background-color: yellow;
-    transition:  transform .5s ease-in-out;
-    left: 250px;
-    z-index: 3;
-}
-.section-wraper .research{
-    background-color: rebeccapurple;
-    transition:  transform .5s ease-in-out;
-    left: 450px;
-    z-index: 2;
-}
-.section-wraper .news{
-    background-color: seagreen;
-    transition:  transform .5s ease-in-out;
-    left: 650px;
-    z-index: 1;
-}
-
-
-/* ANIMAÇÃO */
-
-.section-wraper .education:hover{
-    transform: scale(1.1);
-}
-
-.section-wraper .articles:hover{
-    transform: scale(1.1);
-    z-index: 5;
-
-}
-.section-wraper .research:hover {
-    transform: scale(1.1);
-    z-index: 5;
-}
-
-.section-wraper .news:hover{
-    transform: scale(1.1);
-    z-index: 5;
-}
 
 /* POSTAGENS */
 
