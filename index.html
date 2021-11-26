@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <script src="./js/gsap.min.js"></script>
+    <script src="./js/gsap.min.js.map"></script>
+    <script src="./js/ScrollTrigger.min.js"></script>
+    <script src="./js/ScrollTrigger.min.js.map"></script>
+
     <title>GEPAT</title>
 </head>
 <body>
@@ -13,10 +18,10 @@
         <div class="container">
             <div class="logo">
                 <a href="#hero">                    
-                    <svg width="152" height="54" viewBox="0 0 152 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="19" width="27" height="54" fill="#132B59"/>
-                        <rect y="24" width="34" height="26" fill="#165E0B"/>
-                        <text y="40" x="55" fill="#fff" font-weight="700" font-size="24px">GEPAT</text>
+                    <svg width="152" height="45" viewBox="0 0 152 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="14" width="20" height="40" fill="#132B59"/>
+                        <rect y="18" width="25" height="19" fill="#165E0B"/>
+                        <text y="30" x="40" fill="#fff" font-weight="700" font-size="24px">GEPAT</text>
                     </svg>
                 </a>
                     
@@ -58,11 +63,18 @@
         </div>
     </header>
 
-    <section id="hero"></section>
+    <section id="hero">
+        <div class="quote q-1">
+            <p>Educar é crescer. E crescer é viver. Educação é, assim, vida no sentido mais autêntico da palavra.</p>
+        </div>
+        <div class="quote q-2">
+            <p>Como a medicina, a educação é uma arte. E arte é algo de muito mais complexo e de muito mais completo que uma ciência.</p>
+        </div>
+    </section>
 
     <section id="presentation">
         <div class="container">
-            <div class="image">
+            <div class="presentation-image">
             </div>
             <div class="info">
                 <h1>Conheça mais sobre nosso trabalho</h1>
@@ -233,45 +245,6 @@
 
 </body>
 
-<script>
-    const horizontalMenu = [...document.querySelectorAll('.horizontal-menu li a')];
-    const menuOpen = document.querySelector('input[type="checkbox"]');
-    const inputSlide = document.querySelectorAll('input[type="radio"]');
-    let contadorSlide = 0;
-
-    setInterval(()=>{ 
-        const arr = [...inputSlide];
-        arr[contadorSlide].checked = false;
-
-        contadorSlide++;        
-        contadorSlide = contadorSlide < arr.length ? contadorSlide : 0;
-        
-        arr[contadorSlide].checked = true;
-
-    }, 3000);
-
-    menuOpen.addEventListener('click', checkedMenu);
+<script src="./js/main.js"></script>
     
-    horizontalMenu.forEach( i => {
-        i.addEventListener('click', () => {
-            menuOpen.checked = false;
-            document.querySelector('body').style.overflow = 'visible';
-        });
-    });
-    
-    
-    function checkedMenu (){
-        document.querySelector('body').style.overflow = 'visible';
-        
-        if (menuOpen.checked){
-            document.querySelector('body').style.overflow = 'hidden';
-            tl = gsap.timeline({duration: .5})
-            .from('.vertical-menu li', {y:-20, opacity: 0, stagger: .25})
-            .from('.horizontal-menu li', {x:-40, opacity: 0, stagger:.25});
-        }
-        
-    }
-
-    
-</script>
 </html>
