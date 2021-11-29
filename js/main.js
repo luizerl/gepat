@@ -48,12 +48,11 @@ window.addEventListener('load', () =>{
     });
     
     const presentationTimeline = gsap.timeline({ 
+        duration: .25,
+        stagger: .15,
         scrollTrigger:{
             trigger: '#presentation',
-            toggleActions: 'play restart  reset',
-            pin: true,
-            scrub: 1,
-            pinSpacing: 0
+            toggleActions: 'play restart  reset'
         },
     });
 

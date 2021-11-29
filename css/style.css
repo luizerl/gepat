@@ -23,6 +23,22 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar{
+    width: .5rem;
+}
+
+body::-webkit-scrollbar-track{
+    background-color: var(--light-grey);
+}
+body::-webkit-scrollbar-thumb{
+    background-color: var(--gold);
+    border-radius: 20px;
+}
+
 li{
     list-style: none;
 }
@@ -69,6 +85,7 @@ body header.non-homepage a{
     position: absolute;
     bottom:10px;
     left: 50%;
+    transform: translate(-50%, 0);
     z-index: 50;
 }
 
@@ -443,6 +460,7 @@ nav .vertical-menu li:nth-of-type(5):hover ~ .bg-5{
 .partners{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -451,6 +469,7 @@ nav .vertical-menu li:nth-of-type(5):hover ~ .bg-5{
 
 .partner{
     max-width: 30%;
+    min-width: 300px;
     background-color: white;
     padding: 50px 30px;
     color: var(--darker);
@@ -458,6 +477,9 @@ nav .vertical-menu li:nth-of-type(5):hover ~ .bg-5{
     position: relative;
     top: 0;
     transition: .05s top ease-in-out;
+
+    flex-shrink: 0;
+    flex-basis: 400px;
 }
 
 .partner img{
@@ -690,7 +712,8 @@ input:nth-of-type(3):checked ~ .post-container label:nth-of-type(2){
     background-repeat: no-repeat;
     background-size: cover;
     height: 580px;
-    width: 490px;
+    max-width: 490px;
+    min-width: 450px;
 }
 
 #contact .contact-form{
@@ -803,4 +826,152 @@ footer .developer a{
 
 .developer a:hover{
     color: white;
+}
+
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 320px) and (max-width: 500px){
+    header .menu-label::before{
+        top: 15px !important;
+        right: 20px;
+    }
+
+    header .vertical-menu{
+        font-size: 40px;
+    }
+    header .menu .horizontal-menu{
+        overflow-x: scroll;
+        bottom: 50px;
+    }
+    #hero{
+        background-size: cover;
+        background-position: -310px;
+    }
+    #hero .q-2{
+        display: none;
+    }
+    #presentation{
+        height: auto;
+    }
+    #presentation .info h1{
+        font-size: 40px;
+        margin-top: 50px;
+    }
+    #presentation .info p{
+        margin-bottom: 30px;
+    }
+    #presentation .presentation-image{
+        display: none;
+    }
+    #partnerships .partners-info{
+        flex-direction: column;
+    }
+    #partnerships .partners-info h1{
+        width: 100%;
+        font-size: 40px;
+    }
+    #partnerships .partners-info p{
+        margin-top: 30px;
+        max-width: 100%;
+    }
+    #partnerships .partners{
+        flex-direction: column;
+        
+    }
+    #partnerships .partner{
+       max-width: 100%;
+       margin-bottom: 30px;
+    }
+    #contact .image{
+        display: none;
+    }
+    #contact .contact-form{
+        width: 100%;
+    }
+
+    #contact .title-contact h1{
+        font-size: 40px;
+    }
+    
+    footer .menu-footer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    footer .menu-footer p{
+        order: 10;
+        margin-top: 10px;
+        width: 80%;
+        max-height: 300px;
+
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:900px){
+    #hero{
+        background-size: cover;
+    }
+
+    #presentation{
+        height: auto;
+        padding: 50px 0;
+    }
+    #presentation .container{
+        flex-wrap: wrap;
+    }
+    #presentation .presentation-image{
+        height: 350px;
+        margin-bottom: 30px;
+    }
+
+    #partnerships .partners-info{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #partnerships .partners-info h1, #partnerships .partners-info p{
+        width: 100%;
+        min-width: 90%;
+        margin-bottom: 20px;
+    }
+    #partnerships .partners{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+    #partnerships .partner{
+        margin: 6px 0;
+    }
+
+    #contact .image{
+        display: none;
+    }
+
+    #contact .contact-form{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    #contact .title-contact{
+        max-width: 45%;
+    }
+    #contact .title-contact h1{
+        font-size: 35px;
+    }
+
+    #contact .contact-form form{
+        width: 50%;
+    }
+
+    footer .menu-footer p{ 
+        max-width: 200px;
+    }
 }
