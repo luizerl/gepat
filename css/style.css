@@ -1055,8 +1055,10 @@ footer .developer a{
 
 @media screen and (max-height: 590px) {
     .menu-window{
+        position: relative;
         width: auto;
         padding-top: 100px;
+        z-index: -2;
     }
     .horizontal-menu{
         height: 10vh;

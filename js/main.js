@@ -30,69 +30,67 @@ horizontalMenu.forEach( i => {
 
 
 // Animations
-window.addEventListener('load', () =>{
 
-    const headerTimeline = gsap.timeline({ 
-        duration: .8,
-        stagger: .4, 
-    });
+const headerTimeline = gsap.timeline({ 
+    duration: .8,
+    stagger: .4, 
+});
 
-    headerTimeline.from('header', {y: -200})
-    .from('#hero', {
-        opacity: 0
-    })
-    .from('#hero .quote', {
-        stagger: .3,
-        opacity: 0, 
-        bottom: 0
-    });
-    
-    const presentationTimeline = gsap.timeline({ 
-        duration: .25,
-        stagger: .15,
-        scrollTrigger:{
-            trigger: '#presentation',
-            toggleActions: 'play restart  reset'
-        },
-    });
-
-    presentationTimeline.from('.presentation-image', {
-        y: -100, 
-        opacity: 0,
-    })
-    .from('#presentation .info h1', {
-        opacity: 0,
-        y: 50
-    })
-    .from('#presentation .info p', {
-        opacity: 0,
-        x: 50
-    });
-
-    const partnerTimeline = gsap.timeline({ 
-        duration: .5, 
-        stagger: .25,
-        scrollTrigger:{
-            trigger: '#partnerships',
-            toggleActions: 'play restart  reset',
-        },
-    });
-
-    partnerTimeline.from('.partners-info h1',{
-        y: 80,
-        opacity: .2
-    })
-    .from('.partners-info p',{
-        x: 200
-    })
-    .from('.partner',{
-        stagger: .3,
-        y: 300,
-        opacity: 0
-    });
-
-    
+headerTimeline.from('header', {y: -200})
+.from('#hero', {
+    opacity: 0
 })
+.from('#hero .quote', {
+    stagger: .3,
+    opacity: 0, 
+    bottom: 0
+});
+
+const presentationTimeline = gsap.timeline({ 
+    duration: .25,
+    stagger: .15,
+    scrollTrigger:{
+        trigger: '#presentation',
+        toggleActions: 'play restart  reset'
+    },
+});
+
+presentationTimeline.from('.presentation-image', {
+    y: -100, 
+    opacity: 0,
+})
+.from('#presentation .info h1', {
+    opacity: 0,
+    y: 50
+})
+.from('#presentation .info p', {
+    opacity: 0,
+    x: 50
+});
+
+const partnerTimeline = gsap.timeline({ 
+    duration: .5, 
+    stagger: .25,
+    scrollTrigger:{
+        trigger: '#partnerships',
+        toggleActions: 'play restart  reset',
+    },
+});
+
+partnerTimeline.from('.partners-info h1',{
+    y: 80,
+    opacity: .2
+})
+.from('.partners-info p',{
+    x: 200
+})
+.from('.partner',{
+    stagger: .3,
+    y: 300,
+    opacity: 0
+});
+
+
 
 // Functions
 function checkedMenu (){
