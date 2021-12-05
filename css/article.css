@@ -1,4 +1,6 @@
-
+html body header{
+    position: relative;
+}
 /* MAIN POST */
 .main-post{
     margin: 20px 0;
@@ -100,23 +102,29 @@
 }
 .post-section > .container{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 .post-section .post-wrap{
     display: flex;
-    border: 1px solid transparent;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
+    min-width: 300px;
+    flex-grow: 1;
+    flex-basis: 300px;
     gap: 40px;
+    
 }
 
 .post-section .post-img{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
+    width: 100%;
     height: 200px;
     overflow: hidden;
     position: relative;
@@ -128,10 +136,7 @@
     z-index: 1;
 }
 
-.post-wrap:hover{
-    animation: borderAnimation .5s ease-in forwards;
 
-}
 .post-wrap:hover .post-img img{
     transform: scale(1.2);
 }
@@ -159,4 +164,12 @@
 
    
 
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .post-section .post-wrap{
+        min-width: 300px;
+        max-width: 100%;
+        flex-grow: 1;
+    }
 }

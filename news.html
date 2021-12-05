@@ -10,35 +10,61 @@
 
 <body>
 
-    <header class="non-homepage">
+    
+    <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html#hero">                    <svg width="152" height="54" viewBox="0 0 152 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="19" width="27" height="54" fill="#132B59"/>
-                    <rect y="24" width="34" height="26" fill="#165E0B"/>
-                    <path d="M79.0723 41.3633C78.2812 42.2422 77.124 42.9502 75.6006 43.4873C74.0771 44.0244 72.4072 44.293 70.5908 44.293C67.7979 44.293 65.5664 43.4385 63.8965 41.7295C62.2266 40.0205 61.333 37.6426 61.2158 34.5957L61.2012 32.75C61.2012 30.6504 61.5723 28.8193 62.3145 27.2568C63.0566 25.6846 64.1162 24.4785 65.4932 23.6387C66.8799 22.7891 68.4814 22.3643 70.2979 22.3643C72.9541 22.3643 75.0146 22.9746 76.4795 24.1953C77.9541 25.4062 78.8135 27.2178 79.0576 29.6299H74.1064C73.9307 28.4385 73.5498 27.5889 72.9639 27.0811C72.3779 26.5732 71.5479 26.3193 70.4736 26.3193C69.1846 26.3193 68.1885 26.8662 67.4854 27.96C66.7822 29.0537 66.4258 30.6162 66.416 32.6475V33.9365C66.416 36.0654 66.7773 37.667 67.5 38.7412C68.2324 39.8057 69.3799 40.3379 70.9424 40.3379C72.2803 40.3379 73.2764 40.04 73.9307 39.4443V36.1338H70.3564V32.6035H79.0723V41.3633ZM95.2881 34.9619H87.2021V40.0449H96.7529V44H82.0605V22.6719H96.7822V26.6416H87.2021V31.1387H95.2881V34.9619ZM103.989 36.7637V44H98.8477V22.6719H107.358C108.989 22.6719 110.43 22.9746 111.68 23.5801C112.939 24.1758 113.911 25.0303 114.595 26.1436C115.288 27.2471 115.635 28.502 115.635 29.9082C115.635 31.9883 114.888 33.6533 113.394 34.9033C111.909 36.1436 109.868 36.7637 107.271 36.7637H103.989ZM103.989 32.7939H107.358C108.354 32.7939 109.111 32.5449 109.629 32.0469C110.156 31.5488 110.42 30.8457 110.42 29.9375C110.42 28.9414 110.151 28.1455 109.614 27.5498C109.077 26.9541 108.345 26.6514 107.417 26.6416H103.989V32.7939ZM127.896 40.0156H120.85L119.619 44H114.126L121.948 22.6719H126.782L134.663 44H129.141L127.896 40.0156ZM122.08 36.0459H126.665L124.365 28.6484L122.08 36.0459ZM151.216 26.6416H144.814V44H139.673V26.6416H133.389V22.6719H151.216V26.6416Z" fill="black"/>
+                <a href="#hero">
+                    <svg width="152" height="45" viewBox="0 0 152 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="14" width="20" height="40" fill="#132B59" />
+                        <rect y="18" width="25" height="19" fill="#165E0B" />
+                        <text y="30" x="40" fill="#fff" font-weight="700" font-size="24px">GEPAT</text>
                     </svg>
                 </a>
-                    
+
             </div>
             <nav class="menu">
-                <ul>
-                    <li><a  href="/index.html#">Início</a></li>
-                    <li><a href="/index.html#presentation">Apresentação</a></li>
-                    <li><a href="#">Pesquisas</a></li>
-                    <li><a href="#">Ensino</a></li>
-                    <li><a href="#">Publicações</a></li>
-                    <li><a href="#">Equipe</a></li>
-                    <li><a href="/index.html#contact">Contato</a></li>
-                    <li><a href="#">+</a></li>
-                </ul>
+                <input type="checkbox" name="menu" id="menu-hamburguer">
+
+                <label class="menu-label" for="menu-hamburguer">
+                    <span></span>
+                    <span></span>
+                </label>
+
+                <div class="menu-window" for="menu-hamburguer">
+                    <div class="container">
+                        <ul class="horizontal-menu">
+                            <li class="current-page"><a href="">Início</a></li>
+                            <li><a href="#presentation">Apresentação</a></li>
+                            <li><a href="#partnerships">Parcerias</a></li>
+                            <li><a href="./team.html">Equipe</a></li>
+                            <li><a href="#contact">Contato</a></li>
+                        </ul>
+                        <ul class="vertical-menu">
+                            <li><a href="./news.html">Notícias</a></li>
+                            <li><a href="./articles.html">Pesquisas</a></li>
+                            <li><a href="./publications.html">Publicações</a></li>
+                            <li><a href="./indicated-material.html">Materiais Indicados</a></li>
+                            <li><a href="">Eventos</a></li>
+
+                            <div class="bg bg-1"><img src="./img/noticias.jpg"></div>
+                            <div class="bg bg-2"><img src="./img/pesquisa.jpg"></div>
+                            <div class="bg bg-3"><img src="./img/publicacoes.jpg"></div>
+                            <div class="bg bg-4"><img src="./img/material-recomendado.jpg"></div>
+                            <div class="bg bg-5"><img src="./img/evento.jpg"></div>
+
+                        </ul>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
 
     <section id="main-post">
         <div class="container">
-            <img src="https://source.unsplash.com/random" alt="">
+            <div class="img-container">
+                <img src="https://source.unsplash.com/random" alt="">
+            </div>
             <div class="info-container">
                 <div class="text-container">
                     <h6 class="tag">Notícias</h6>
@@ -60,7 +86,7 @@
                     <img src="https://source.unsplash.com/random" alt="">
                 </div>
                 <div class="h3 title">
-                    <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsa.</h3>
+                    <h3><a href="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsa.</a></h3>
                 </div>
             </div>
             <div class="container-post">
@@ -68,7 +94,7 @@
                     <img src="https://source.unsplash.com/random" alt="">
                 </div>
                 <div class="h3 title">
-                    <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsa.</h3>
+                    <h3><a href="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsa.</a></h3>
                 </div>
             </div>
             <div class="container-post">
@@ -76,72 +102,29 @@
                     <img src="https://source.unsplash.com/random" alt="">
                 </div>
                 <div class="h3 title">
-                    <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsa.</h3>
-                </div>
-            </div>
-            <div class="container-post">
-                <div class="img-post-container">
-                    <img src="https://source.unsplash.com/random" alt="">
-                </div>
-                <div class="h3 title">
-                    <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsa.</h3>
-                </div>
-            </div>
-            <div class="container-post">
-                <div class="img-post-container">
-                    <img src="https://source.unsplash.com/random" alt="">
-                </div>
-                <div class="h3 title">
-                    <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsa.</h3>
-                </div>
-            </div>
-            <div class="container-post">
-                <div class="img-post-container">
-                    <img src="https://source.unsplash.com/random" alt="">
-                </div>
-                <div class="h3 title">
-                    <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsa.</h3>
-                </div>
-            </div>
-            <div class="container-post">
-                <div class="img-post-container">
-                    <img src="https://source.unsplash.com/random" alt="">
-                </div>
-                <div class="h3 title">
-                    <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsa.</h3>
-                </div>
-            </div>
-            <div class="container-post">
-                <div class="img-post-container">
-                    <img src="https://source.unsplash.com/random" alt="">
-                </div>
-                <div class="h3 title">
-                    <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsa.</h3>
-                </div>
-            </div>
-            <div class="container-post">
-                <div class="img-post-container">
-                    <img src="https://source.unsplash.com/random" alt="">
-                </div>
-                <div class="h3 title">
-                    <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsa.</h3>
+                    <h3><a href="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At, ipsa.</a></h3>
                 </div>
             </div>
         </div>
     </section>
 
+   
     <footer>
         <div class="container">
+            <div class="logo">
+                <svg width="171" height="59" viewBox="0 0 327 134" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="42.75" width="60.75" height="121.5" fill="#132B59" />
+                    <rect y="54" width="76.5" height="58.5" fill="#165E0B" />
+                    <path
+                        d="M158.145 97.7266C156.562 99.4844 154.248 100.9 151.201 101.975C148.154 103.049 144.814 103.586 141.182 103.586C135.596 103.586 131.133 101.877 127.793 98.459C124.453 95.041 122.666 90.2852 122.432 84.1914L122.402 80.5C122.402 76.3008 123.145 72.6387 124.629 69.5137C126.113 66.3691 128.232 63.957 130.986 62.2773C133.76 60.5781 136.963 59.7285 140.596 59.7285C145.908 59.7285 150.029 60.9492 152.959 63.3906C155.908 65.8125 157.627 69.4355 158.115 74.2598H148.213C147.861 71.877 147.1 70.1777 145.928 69.1621C144.756 68.1465 143.096 67.6387 140.947 67.6387C138.369 67.6387 136.377 68.7324 134.971 70.9199C133.564 73.1074 132.852 76.2324 132.832 80.2949V82.873C132.832 87.1309 133.555 90.334 135 92.4824C136.465 94.6113 138.76 95.6758 141.885 95.6758C144.561 95.6758 146.553 95.0801 147.861 93.8887V87.2676H140.713V80.207H158.145V97.7266ZM190.576 84.9238H174.404V95.0898H193.506V103H164.121V60.3438H193.564V68.2832H174.404V77.2773H190.576V84.9238ZM207.979 88.5273V103H197.695V60.3438H214.717C217.979 60.3438 220.859 60.9492 223.359 62.1602C225.879 63.3516 227.822 65.0605 229.189 67.2871C230.576 69.4941 231.27 72.0039 231.27 74.8164C231.27 78.9766 229.775 82.3066 226.787 84.8066C223.818 87.2871 219.736 88.5273 214.541 88.5273H207.979ZM207.979 80.5879H214.717C216.709 80.5879 218.223 80.0898 219.258 79.0938C220.312 78.0977 220.84 76.6914 220.84 74.875C220.84 72.8828 220.303 71.291 219.229 70.0996C218.154 68.9082 216.689 68.3027 214.834 68.2832H207.979V80.5879ZM255.791 95.0312H241.699L239.238 103H228.252L243.896 60.3438H253.564L269.326 103H258.281L255.791 95.0312ZM244.16 87.0918H253.33L248.73 72.2969L244.16 87.0918ZM302.432 68.2832H289.629V103H279.346V68.2832H266.777V60.3438H302.432V68.2832Z"
+                        fill="white" />
+                </svg>
+
+            </div>
             <div class="menu-footer">
-                <div class="logo">
-                    <svg width="327" height="134" viewBox="0 0 327 134" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="42.75" width="60.75" height="121.5" fill="#132B59"/>
-                        <rect y="54" width="76.5" height="58.5" fill="#165E0B"/>
-                        <path d="M158.145 97.7266C156.562 99.4844 154.248 100.9 151.201 101.975C148.154 103.049 144.814 103.586 141.182 103.586C135.596 103.586 131.133 101.877 127.793 98.459C124.453 95.041 122.666 90.2852 122.432 84.1914L122.402 80.5C122.402 76.3008 123.145 72.6387 124.629 69.5137C126.113 66.3691 128.232 63.957 130.986 62.2773C133.76 60.5781 136.963 59.7285 140.596 59.7285C145.908 59.7285 150.029 60.9492 152.959 63.3906C155.908 65.8125 157.627 69.4355 158.115 74.2598H148.213C147.861 71.877 147.1 70.1777 145.928 69.1621C144.756 68.1465 143.096 67.6387 140.947 67.6387C138.369 67.6387 136.377 68.7324 134.971 70.9199C133.564 73.1074 132.852 76.2324 132.832 80.2949V82.873C132.832 87.1309 133.555 90.334 135 92.4824C136.465 94.6113 138.76 95.6758 141.885 95.6758C144.561 95.6758 146.553 95.0801 147.861 93.8887V87.2676H140.713V80.207H158.145V97.7266ZM190.576 84.9238H174.404V95.0898H193.506V103H164.121V60.3438H193.564V68.2832H174.404V77.2773H190.576V84.9238ZM207.979 88.5273V103H197.695V60.3438H214.717C217.979 60.3438 220.859 60.9492 223.359 62.1602C225.879 63.3516 227.822 65.0605 229.189 67.2871C230.576 69.4941 231.27 72.0039 231.27 74.8164C231.27 78.9766 229.775 82.3066 226.787 84.8066C223.818 87.2871 219.736 88.5273 214.541 88.5273H207.979ZM207.979 80.5879H214.717C216.709 80.5879 218.223 80.0898 219.258 79.0938C220.312 78.0977 220.84 76.6914 220.84 74.875C220.84 72.8828 220.303 71.291 219.229 70.0996C218.154 68.9082 216.689 68.3027 214.834 68.2832H207.979V80.5879ZM255.791 95.0312H241.699L239.238 103H228.252L243.896 60.3438H253.564L269.326 103H258.281L255.791 95.0312ZM244.16 87.0918H253.33L248.73 72.2969L244.16 87.0918ZM302.432 68.2832H289.629V103H279.346V68.2832H266.777V60.3438H302.432V68.2832Z" fill="white"/>
-                        </svg>
-                        
-                    <p>Grupo de Estudos e Pesquisa sobre as contribuições de Anísio Teixeira para a Educação Brasileira</p>
-                </div>
+
+                <p>Grupo de Estudos e Pesquisa sobre as contribuições de Anísio Teixeira para a Educação
+                    Brasileira<br><br> 2021 &copy; Todos os direitos reservados</p>
                 <ul class="fr-menu">
                     <li><a href="#hero">Início</a></li>
                     <li><a href="#presentation">Apresentação</a></li>
@@ -159,7 +142,8 @@
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </div>
-            <p class="developer">Desenvolvido por <a href="https://luizerl.github.io" data-attr="luizerl"><b>luizerl</b></a></p>
+            <p class="developer">Desenvolvido por <a href="https://luizerl.github.io"
+                    data-attr="luizerl"><b>luizerl</b></a></p>
         </div>
     </footer>
 </body>
